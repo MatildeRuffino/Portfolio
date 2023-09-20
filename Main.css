@@ -1,0 +1,1993 @@
+
+/* --------------------------------- General -------------------------------- */
+/* Nascondi la barra di scorrimento su Firefox */
+html {
+  scrollbar-width: none;
+}
+
+body {
+  
+  overflow-x: hidden; /* this prevent from scrolling */
+
+  scrollbar-width: none;
+  background-color: #20232c;
+  margin: 0;
+  -ms-overflow-style: none;
+  -webkit-text-stroke: 0.45px;
+  font-family: 'Space Grotesk';
+}
+
+/* remove scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+
+.content {
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.content.active {
+  opacity: 1;
+  padding: 0;
+  justify-content: space-between;
+  background-color: #e1ebf8;
+  height: auto;
+}
+
+#content-1.active{
+  margin-bottom: 320vh;
+}
+
+#content-2.active{
+  margin-bottom: 70vh;
+}
+
+
+#content-1.active ~ footer{
+  transform: translateY(250vh);
+}
+
+#content-2.active ~ footer{
+  transform: translateY(0vh);
+}
+
+/* The white Screen between transition from About Me ---> Work*/
+.transition-overlay {
+  position: fixed;
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #20232c;
+  opacity: 0;
+  z-index: -91;
+  transition: opacity .3s ease;
+}
+
+@font-face {
+  font-family: 'Mati';
+  src: url(/Mati-Regular.otf) format("opentype");
+}
+
+/* --------------------------------- Loader --------------------------------- */
+
+#loader {
+  position: absolute;
+  top: 0%; /* Va a 0 per mostrare il Loader*/
+  width: 100%;
+  height: 100%;
+  background-color: #20232c;
+  z-index: 100;
+}
+
+#loader #phrases-container {
+  z-index: 3;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
+
+/* This is the rounded part */
+.rounded-div {
+width:150%;
+display:block;
+position:absolute;
+background:#20232c;
+height:100vh;
+left:50%;
+border-radius:50%;
+transform:translate(-50%,0%);
+z-index:1
+}
+
+/* --------------------------------- Header --------------------------------- */
+.header {
+  position:fixed;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  margin-bottom:30px;
+  z-index:19;
+  width:100vw;
+  padding:10px
+  }
+  
+
+  .header input[id="radio-2"]:checked + .tab {
+    color:white
+    }
+
+  /* ----------------------------- SwithcSections ----------------------------- */
+.NavbarHeader {
+  --tab-width:100px;
+  --tab-height:50px;
+  --tab-margin:5px;
+  display:flex;
+  width:calc(var(--tab-width) * 2);
+  height:100%;
+  left:50%;
+  transform:translateX(-50%);
+  padding:var(--tab-margin);
+  border-radius:99px;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
+  position:relative;
+  transition:all .3s ease;
+  cursor:pointer;
+  overflow: hidden;
+  }
+
+
+  
+  .tab {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:var(--tab-height);
+  width:var(--tab-width);
+  color:#000;
+  font-weight:500;
+  border-radius:99px;
+  cursor: pointer;
+  transition:color .15s ease-in;
+  box-sizing: border-box;
+  padding-top: 0;
+  z-index: 1000;
+  }
+
+
+  
+  .header input[type="radio"] {
+  display:none
+  }
+
+  .header input[id="radio-1"]:checked ~ .glider {
+  transform:translateY(-50%) translateX(0%);
+  }
+  
+  .header input[id="radio-2"]:checked ~ .glider {
+  transform:translateY(-50%) translateX(100%);
+  background-color: #4a2e79dd;
+}
+
+
+  .glider {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  height:50px;
+  width:calc(var(--tab-width) - var(--tab-margin));
+  background-color:#5887d8;
+  z-index:8;
+  border-radius:99px;
+  transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+  }
+
+
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease;
+  }
+  
+  .background1 {
+    opacity: 1;
+    background-image:white;
+    background-color: white;
+  }
+  
+  .background2 {
+    opacity: 0;
+    background-image:linear-gradient(163deg, #4964da 0%, rgba(146, 73, 221, 0.8) 11.8%, rgba(176, 60, 196, 0.6) 23.6%, rgba(192, 55, 173, 0.4) 35.4%, rgba(217, 46, 116, 0) 59%), radial-gradient(100% 100% at 10% 100%, #fdd575 26%, #fcc06a 36.57%, #fbaa63 47.14%, #f99262 57.71%, #f77868 68.29%, #f55973 78.86%, #d22e8c 100%);
+    color:white
+  }
+  
+  
+/* -------------------------- Buttons and magnetic -------------------------- */
+.BtnHeader {
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-direction:column;
+  width:60px;
+  height:60px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  position:absolute;
+  transition-duration:.3s;
+  margin:none;
+  padding:none;
+  transition:width .3s ease-in-out,height .3s ease-in-out,border-radius .3s ease-in-out;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
+  background-color:#f4f6f7;
+  overflow:hidden;
+    -ms-overflow-style: auto;
+  -webkit-text-stroke: 0;
+  }
+  
+  /* This is the range of the magnetic effect */
+  .OuterMagneticRange {
+  top:0;
+  width:70px;
+  height:70px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%
+  }
+
+
+  @media (max-width: 400px) {
+
+    .NavbarHeader { 
+      --tab-width:70px;
+      width:calc(var(--tab-width) * 2);
+    }
+
+    .tab{
+      width:var(--tab-width);
+    }
+
+    .glider{
+      width:calc(var(--tab-width) - var(--tab-margin));
+    }
+    .MenuBtn {
+      right:10px !important;
+    }
+
+    .SocialBtn {
+      left:10px !important;
+    }
+
+    footer .icon i {
+    transform: scale(1.2) !important;
+    }
+
+
+  }
+/* ----------------------------- Settings Button ---------------------------- */
+.cardMenu {
+width:180px;
+height:230px;
+color:#000;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+gap:5px;
+margin-top:60px
+}
+
+.cardMenu .item {
+border-radius:20px;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background-color: #5887d8;
+text-decoration: none;
+}
+
+.item:hover {
+transform:scale(0.95);
+transition:all .3s;
+}
+
+lord-icon{
+  width: 70%;
+  height: 70%;
+  margin-bottom: -10%;
+  margin-top: 0%;
+}
+
+.text {
+font-size:100%;
+font-family:inherit;
+font-weight:300;
+color: #FFF;
+font-family:'DM Sans',sans-serif;
+letter-spacing:-3%;
+}
+
+#MenuButton-icon {
+position:absolute;
+right:15px;
+top:15px;
+z-index:100000;
+background-color:#fff;
+border-radius:50%
+}
+
+/* ------------------------------ SocialButton ------------------------------ */
+.Socialcard {
+--font-color:#323232;
+--font-color-sub:#666;
+--bg-color:#f4f6f7;
+--main-color:#323232;
+width:200px;
+height:200px;
+background:var(--bg-color);
+border-radius:5px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+position:absolute;
+top:60px
+}
+
+.card-photo {
+transform:scale(0.3) translate(220px,230px);
+width:250px;
+height:250px;
+margin-left:-125px;
+margin-top:-125px;
+border-radius:50%;
+transition:.3s
+}
+
+
+.card-title {
+text-align:center;
+color:var(--font-color);
+font:400 20px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif
+}
+
+.card-title span {
+font-size:15px;
+color:var(--font-color-sub)
+}
+
+.card-socials {
+display:flex;
+height:0;
+opacity:0;
+margin-top:20px;
+gap:20px;
+transition:.5s
+}
+
+.card-socials-btn {
+width:25px;
+height:25px;
+border:none;
+background:transparent;
+cursor:pointer
+}
+
+.card-socials-btn svg {
+width:100%;
+height:100%;
+fill:var(--main-color)
+}
+
+.Socialcard:hover > .card-socials {
+opacity:1;
+height:35px
+}
+
+.card-socials-btn:hover {
+transform:translateY(-5px);
+transition:all .15s
+}
+
+#Social-icon {
+position:absolute;
+left:15px;
+top:15px
+}
+
+/* ------------------------------ WelcomeSlider ----------------------------- */
+.WelcomeSlider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 540px) {
+  .OverlaySlider h1{
+    position: absolute;
+    bottom: 10vh;
+    left:10vw;
+    text-shadow:none !important;
+  }
+}
+
+.SliderContent{
+  background-image: url("Resources/Scritta.webp");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.OverlaySlider{
+  background-image: url("Resources/BG.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.SliderContent, .OverlaySlider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #20232c;
+}
+
+.OverlaySlider {
+
+  transform: translateX(-100%); /* Initially off-screen to the left */
+}
+.OverlaySlider img{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.arrow-top,
+.arrow-bottom {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-top {
+  animation: scroll 2s infinite;
+}
+
+.arrow-bottom {
+  position:relative;
+  top:-15px;
+  animation: scroll 2s infinite;
+  animation-delay: 0.1s;
+}
+
+@keyframes scroll {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+}
+
+
+
+/* ------------------------------ OtherContent ------------------------------ */
+#OtherContent {
+background-image: url('Resources/PaperTexture-min.webp');
+background-size: 100% auto;
+background-repeat:repeat-y;
+top:250vh;
+position:relative;
+width:100%;
+background-color:#20232c;
+padding:0 10vw
+}
+
+#OtherContent * {
+font-family:'DM Sans',sans-serif;
+letter-spacing:-3%
+}
+
+/* the divider label */
+.LabelDivisore {
+margin-top:6vw;
+font-size:1.3em;
+color:#616161;
+width:100%;
+
+}
+
+/* actual divider orizzontal line */
+.divisore {
+background-color:#616161;
+width:100%;
+height:2px;
+border-radius:3px;
+position: relative;
+}
+
+
+/* Smarphone view */
+@media (max-width: 768px) {
+.LabelDivisore {
+margin-top:2em;
+margin-bottom:.5em
+}
+
+#OtherContent .divisore {
+margin-bottom:3vh
+}
+}
+
+/* ------------------------------ First Section ----------------------------- */
+.First {
+max-width:1440px;
+margin:0 auto
+}
+
+.First .row {
+padding:0;
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+flex-direction:row;
+margin-top: 3vw;
+}
+
+.First .col-md-6 {
+flex:0 0 50%;
+max-width:50%;
+position:relative;
+}
+
+.First .col-md-6 h3 {
+font-size:4vw;
+line-height:.95em;
+font-weight:500;
+margin-bottom:.5em
+}
+
+.First .col-md-6 p {
+font-size:max(2vw,18px);
+color:#606060;
+font-weight:400
+}
+
+.First .col-md-6 span {
+max-width:100%;
+height:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+object-fit:cover;
+}
+
+.First .col-md-6 span img {
+width:100%;
+}
+
+/* Smarphone view */
+
+@media (max-width: 768px) {
+.First .row {
+flex-direction:column
+}
+
+.First .col-md-6,.First .col-md-6 span,.First .col-md-6 img {
+max-width:95%
+}
+
+.First .col-md-6 h3 {
+font-size:10vw
+}
+
+.First .col-md-6 p {
+font-size:4vw
+
+}
+
+.First #colMD6-img {
+display:flex;
+justify-content:center
+}
+}
+
+/* ---------------------------- About Me ---------------------------- */
+
+.AboutMe .FirstWrapper{
+  display: flex;
+  flex: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.AboutMe .SecondWrapper{
+  display: flex;
+  flex: row;
+  justify-content: right;
+  align-items: center;
+}
+
+.AboutMe .FirstWrapper .text, .AboutMe .SecondWrapper .text{
+  width: 65%;
+}
+
+.AboutMe .FirstWrapper p, .AboutMe .SecondWrapper p{
+  font-size:1.3vw;
+  letter-spacing: -3%;
+  color:#606060;
+  font-weight:400
+}
+
+.AboutMe .FirstWrapper h1 , .AboutMe .SecondWrapper h1{
+  color: black;
+  font-size: 3vw  ;
+  margin-top: 10vh;
+}
+
+.AboutMe .FirstWrapper img {
+  position: absolute;
+  right: 0px;
+  width: 35%;
+}
+
+.AboutMe .SecondWrapper img{
+  position: absolute;
+  left: 0px;
+  width: 45%;
+}
+
+
+.AboutMe .StarWrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 6vw;
+}
+
+.AboutMe .StarWrapper img{
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+  width:30vw ;
+}
+
+.AboutMe .LastImgWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5vh;
+  width: 100%;
+  height: 20vw;
+  box-sizing: border-box;
+}
+
+.AboutMe .LastImgWrapper img{
+  height: 100%;
+}
+
+.AboutMe .FirstWrapper img:nth-child(1) , .AboutMe .SecondWrapper img:nth-child(2) {
+  display: none;
+}
+
+.AboutMe .LastImgWrapper .newbutton {
+  width: 20vw;
+  height: 20vw;
+  background-image: url("Resources/FotoTonda.webp");
+  background-size: cover;
+  border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.AboutMe .LastImgWrapper .OuterMagneticRange {
+  /* this is the range*/
+  border: none  ;
+  width: 23vw;
+  height: 23vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.AboutMe .LastImgWrapper .OuterMagneticRange img {
+  transform: translateX(-2.9%) translateY(1.7%) scaleY(0.98);
+  z-index: 0;
+
+}
+
+
+@media (max-width: 768px) {
+  .AboutMe .FirstWrapper , .AboutMe .SecondWrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .AboutMe .FirstWrapper .text, .AboutMe .SecondWrapper .text{
+    width: 100%;
+  }
+  
+  .AboutMe .FirstWrapper .text{
+    position: relative;
+    margin-top: -30vw;
+  }
+  .AboutMe .FirstWrapper p, .AboutMe .SecondWrapper p{
+    font-size:4vw
+  }
+  
+  .AboutMe .FirstWrapper h1 , .AboutMe .SecondWrapper h1{
+    font-size: 8vw;
+    width: 50%;
+    margin-top:12vw;
+    margin-bottom: 2vw;
+  }
+
+  .AboutMe .SecondWrapper h1{
+  margin-top: -32vw;
+  margin-bottom: 2vw;
+  }
+
+  .AboutMe .FirstWrapper img:nth-child(3) , .AboutMe .SecondWrapper img:nth-child(1) {
+    display: none;
+  }
+
+  .AboutMe .FirstWrapper img:nth-child(1) , .AboutMe .SecondWrapper img:nth-child(2) {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  
+
+  .AboutMe .StarWrapper {
+    padding: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .AboutMe .StarWrapper img{
+    margin-top: 6vw;
+    margin-bottom: 6vw;
+    width: 100%;
+  }
+
+  .AboutMe .LastImgWrapper div:nth-child(2){
+    display: none;    
+  }
+
+    .AboutMe .LastImgWrapper{
+      justify-content: center;
+      margin-top: -2vw;
+      width: 100%;
+      height: 30vw;
+      box-sizing: border-box;
+    }
+    
+    .AboutMe .LastImgWrapper img{
+      height: 100%;
+    }
+
+}
+
+
+/* ----------------------------------- Cit ---------------------------------- */
+.FraseCelebre {
+width:100%;
+height:40vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+padding:15vw 5vh;
+}
+
+.FraseCelebre .about_text  {
+font-size:max(4vw,40px);
+text-align:center
+}
+
+.FraseCelebre p {
+font-size:max(1.5vw,24px);
+text-align:center;
+color: #5887d8;
+}
+
+
+.about_text_pWrap {
+  overflow: hidden;
+}
+.about_text_p {
+  transform: translateY(200%);
+}
+
+
+/* Smarphone view */
+@media (max-width: 768px) {
+.FraseCelebre {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+padding: 20vw 0;
+height:20vh;
+}
+
+.FraseCelebre .about_text {
+font-size:4.5vw
+}
+
+.FraseCelebre p {
+font-size:2.5vw;
+text-align:center
+}
+}
+
+/* ------------------------------ Go to my art ------------------------------ */
+.GotoMyArtWrapper {
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-10vw) translateY(1vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+.GotoMyArtWrapper .parallax{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.GotoMyArtWrapper .parallax img{
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  
+}
+
+.GotoMyArtWrapper .text{
+  margin-top: 8vw;
+  position: absolute;
+  padding:20vw 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    color: white;
+
+}
+
+.GotoMyArtWrapper h1 {
+  font-size: 5vw;
+  text-align: center;
+}
+
+
+.GotoMyArtWrapper button .GotoText{
+z-index: 2;
+position: relative;
+}
+
+.GotoMyArtWrapper button {
+  border: none;
+  position: relative;
+  padding: 12px 35px;
+  background-color: #5887d8;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  font-weight: 400;
+  border-radius: 50px;
+  box-shadow: 0 0 0 #5887d8;
+  transition: all 0.8s ease;
+  margin-top: 3vw;
+}
+
+.GotoMyArtWrapper button::before {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      163deg,
+      #4964da 0%,
+      rgba(146, 73, 221, 0.8) 11.8%,
+      rgba(176, 60, 196, 0.6) 23.6%,
+      rgba(192, 55, 173, 0.4) 35.4%,
+      rgba(217, 46, 116, 0) 59%
+    ),
+    radial-gradient(
+      100% 100% at 10% 100%,
+      #fdd575 26%,
+      #fcc06a 36.57%,
+      #fbaa63 47.14%,
+      #f99262 57.71%,
+      #f77868 68.29%,
+      #f55973 78.86%,
+      #d22e8c 100%
+    );
+  opacity: 0; /* Inizialmente invisibile */
+  transition: opacity 0.8s ease; /* Aggiungi una transizione all'opacità */
+}
+
+.GotoMyArtWrapper button:hover::before {
+  opacity: 1;
+}
+
+
+.GotoMyArtWrapper .star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.GotoMyArtWrapper .star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.GotoMyArtWrapper .star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.GotoMyArtWrapper .star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.GotoMyArtWrapper .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.GotoMyArtWrapper .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s ease;
+}
+
+.GotoMyArtWrapper  button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.GotoMyArtWrapper  button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.GotoMyArtWrapper button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.GotoMyArtWrapper button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.GotoMyArtWrapper button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.GotoMyArtWrapper button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #FFFDEF
+}
+
+
+
+/* ---------------------------------- Works --------------------------------- */
+/* ---------------------------------- Works --------------------------------- */
+/* ---------------------------------- Works --------------------------------- */
+/* ---------------------------------- Works --------------------------------- */
+/* ---------------------------------- Works --------------------------------- */
+
+.fa-chevron-left, .fa-chevron-right, .fa-times{
+  transform: scale(0.7);
+}
+
+/* actual divider orizzontal line */
+#content-2 .divisore {
+  background:#616161;
+  width:100%;
+  height:2px;
+  border-radius:3px;
+  margin-bottom: 3vw;
+  }
+  
+
+/* ----------------------------- WorksFirstPart ----------------------------- */
+.IntroWorks {
+background-color:#20232c;
+width:100%;
+height:100vh;
+overflow: hidden;
+position: relative;
+}
+
+.IntroWorks .parallax{
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.IntroWorks .parallax img{
+  transform: translateY(0%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* This is the Violin Girl*/
+.IntroWorks > img {
+  position: absolute;
+  height: 90%;
+  bottom:0px;
+  right: 0px;
+}
+
+.IntroWorks .Text{
+  width: 60vw;
+  height: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7vw;
+}
+
+.IntroWorks .Text p,.IntroWorks .Text h1 {
+  font-family:'DM Sans',sans-serif;
+  letter-spacing: -3%;
+  margin: 0px;
+}
+
+.IntroWorks .Text p{
+  font-size: 2vw;
+  width: 100%;
+  margin: 0 0;
+  box-sizing: border-box; padding-right: 3.5vw;
+}
+
+.IntroWorks .Text h1{
+  font-size: 6vw;
+}
+
+/* Smarphone view */
+@media (max-width: 768px) {
+  .IntroWorks > img {
+    right: 50%;
+    transform: translateX(46%) ;
+  }
+
+  .IntroWorks .Text{
+    position: absolute;
+  width: 100%;
+  z-index: 10;
+  }
+  .IntroWorks .Text p{
+    font-size: 4vw;
+    padding-right: 0;
+  }
+
+  .IntroWorks .Text h1{
+    font-size: 10vw;
+    text-align: center;
+  }
+}
+
+
+/* ---------------------------- OtherContentWork ---------------------------- */
+.OtherContentWork {
+  background-image: url('Resources/PaperTexture-min.webp');
+  background-size: 100% auto;
+  background-repeat:repeat-y;
+  position:relative;
+  width:100%;
+  padding:0 10vw;
+}
+
+.OtherContentWork * {
+font-family:'DM Sans',sans-serif;
+letter-spacing:-3%
+}
+
+@media (max-width: 768px) {
+/* the divider label */
+.OtherContentWork .LabelDivisore {
+  margin-top:2.5em;
+  }
+  
+  /* actual divider orizzontal line */
+ .OtherContentWork .divisore {
+  margin-bottom:1vh
+  }
+}
+
+
+
+
+/* ------------------------- SimpleLightbox General ------------------------- */
+
+/* close button and arrow */
+.sl-wrapper > .sl-navigation > button , .sl-wrapper > .sl-close, .sl-counter  {
+  color:white !important;
+  padding:0 3.5vw
+  }
+  /* background of full page visualization */
+  .sl-overlay {
+  background-color:#20232c !important;
+  pointer-events:none !important
+  }
+  
+  /* caption ---> you must have to add an alt attribute to <img> to see caption */
+  .sl-wrapper > .sl-image > .sl-caption {
+  text-align:center;
+  color:#fff;
+  background-color:red;
+  padding:5px
+  }
+
+  /* dezoom on hover */
+  .zoomItem > a:hover > img,
+  .zoomItemSketch > a:hover > img,
+  .zoomItemCartoon > a:hover > img,
+  .zoomItemIll > a:hover > img,
+  .zoomItemAnim > a:hover >img  {
+  transform:scale(1.03)
+  }
+
+  /*let the image cover the full grdi section */
+  .zoomItem > a > img,
+  .zoomItemSketch > a > img, /* has a variaition look below*/
+  .zoomItemCartoon > a > img,
+  .zoomItemIll > a > img,
+  .zoomItemAnim > a > img {
+  width:100%;
+  display:inline-block;
+  transition:transform .25s ease
+  }
+
+  
+  
+/* ------------------------------ AnimationGrid ----------------------------- */
+
+
+.AnimationGrid {
+display:grid;
+width:100%;
+aspect-ratio:3/2;
+grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+gap:1vw 1vw;
+grid-auto-flow:row;
+grid-template-areas:"Video Video Video Video Video Video Video Text Text Text Text Text" "Video Video Video Video Video Video Video Text Text Text Text Text" "Video Video Video Video Video Video Video Text Text Text Text Text" "Video Video Video Video Video Video Video Text Text Text Text Text" "First-Frame First-Frame First-Frame First-Frame Second-Frame Second-Frame Second-Frame Second-Frame Third-Frame Third-Frame Third-Frame Third-Frame" "First-Frame First-Frame First-Frame First-Frame Second-Frame Second-Frame Second-Frame Second-Frame Third-Frame Third-Frame Third-Frame Third-Frame" "First-Frame First-Frame First-Frame First-Frame Second-Frame Second-Frame Second-Frame Second-Frame Third-Frame Third-Frame Third-Frame Third-Frame" "First-Frame First-Frame First-Frame First-Frame Second-Frame Second-Frame Second-Frame Second-Frame Third-Frame Third-Frame Third-Frame Third-Frame"
+}
+
+.First-Frame {
+grid-area:First-Frame
+}
+
+.Second-Frame {
+grid-area:Second-Frame
+}
+
+.Third-Frame {
+grid-area:Third-Frame
+}
+
+.Video {
+grid-area:Video
+}
+
+.Text {
+grid-area:Text
+}
+.AnimationGrid > div {
+  overflow:hidden
+  }
+
+  @media (max-width: 540px) {
+  
+    .ComicsText .title, .ComicsText .divisor{
+      display: none;
+    }
+
+    .ComicsText span{
+      font-size: 1.4vw;
+    }
+
+    
+    .ComicsText {
+      padding:0;
+    }
+
+
+  }
+
+
+/* ------------------------------- ComicsGrid ------------------------------- */
+.ComicsGrid {
+width: 100%;
+display:grid;
+min-height: 70vw;
+grid-template-columns:1fr 1fr 1fr 1fr;
+grid-template-rows:1fr 1fr;
+grid-auto-columns:1fr;
+gap:1vw 1vw;
+grid-auto-flow:row;
+grid-template-areas:"FirstPage FirstPage SecondPage SecondPage" "ThirdPage ThirdPage ForthPage ComicsText"
+}
+
+.FirstPage {
+grid-area:FirstPage
+}
+
+.SecondPage {
+grid-area:SecondPage
+}
+
+.ThirdPage {
+grid-area:ThirdPage
+}
+
+.ForthPage {
+grid-area:ForthPage
+}
+
+.ComicsText {
+grid-area:ComicsText
+}
+
+.comicsPages {
+box-sizing:border-box;
+display:flex;
+}
+
+.ComicsGrid > div {
+  overflow:hidden
+  }
+
+/* ------------------------------ Illustration ------------------------------ */
+
+.IllustrationGrid {  
+  display: grid;
+  width: 100%;
+  min-height: 70vw;
+  aspect-ratio: 4/3;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap:1vw 1vw;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "First-ill Second-Ill Fifth-Ill Fifth-Ill"
+    "First-ill Third-Ill Forth-Ill Sisxth-Ill"
+    "Eighth-ill Seventh-Ill Seventh-Ill Sisxth-Ill";
+}
+
+.Second-Ill { grid-area: Second-Ill; }
+
+.Third-Ill { grid-area: Third-Ill; }
+
+.Forth-Ill { grid-area: Forth-Ill; }
+
+.Fifth-Ill { grid-area: Fifth-Ill; }
+
+.Sisxth-Ill { grid-area: Sisxth-Ill; }
+
+.Seventh-Ill { grid-area: Seventh-Ill; }
+
+.Eighth-ill { grid-area: Eighth-ill; }
+
+.First-ill { grid-area: First-ill; }
+
+.zoomItemIll {
+  width: 100%;
+  height: 100%;
+}
+
+.zoomItemIll a img {
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  }
+  .IllustrationGrid > div {
+    overflow:hidden
+    }
+
+/* ------------------------------- CartoonGrid ------------------------------ */
+.CartoonGrid {
+display:grid;
+min-height: 50vw;
+width: 100%;
+grid-template-columns:1fr 1fr 1fr;
+grid-template-rows:1fr 1fr;
+grid-auto-columns:1fr;
+gap:1vw 1vw;
+grid-auto-flow:row;
+grid-template-areas:"FirstCartoon SecondCartoon ThirdCartoon" "ForthCartoon FifthCartoon SixthCartoon"
+}
+
+.FirstCartoon {
+grid-area:FirstCartoon
+}
+
+.SecondCartoon {
+grid-area:SecondCartoon
+}
+
+.ThirdCartoon {
+grid-area:ThirdCartoon
+}
+
+.ForthCartoon {
+grid-area:ForthCartoon
+}
+
+.FifthCartoon {
+grid-area:FifthCartoon
+}
+
+.SixthCartoon {
+grid-area:SixthCartoon
+}
+.CartoonGrid  > div {
+  overflow:hidden
+  }
+
+/* ------------------------------- SketchGrid ------------------------------- */
+
+.SketchGrid {
+display:grid;
+aspect-ratio:5/3;
+grid-template-columns:1fr 1.25fr 0.8fr;
+grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-auto-columns:1fr;
+gap:1vw 1vw;
+grid-auto-flow:row;
+grid-template-areas:"FirstSketch SecondSketch ThirdSketch" "FirstSketch SecondSketch ThirdSketch" "FirstSketch SecondSketch ThirdSketch" "FirstSketch SecondSketch ThirdSketch" "FirstSketch SecondSketch ThirdSketch" "FirstSketch FifthSketch ThirdSketch" "FirstSketch FifthSketch SixthSketch" "ForthSketch FifthSketch SixthSketch" "ForthSketch FifthSketch SixthSketch" "ForthSketch FifthSketch SixthSketch" "ForthSketch FifthSketch SixthSketch"
+}
+
+.FirstSketch {
+grid-area:FirstSketch
+}
+
+.SecondSketch {
+grid-area:SecondSketch
+}
+
+.ThirdSketch {
+grid-area:ThirdSketch
+}
+
+.ForthSketch {
+grid-area:ForthSketch
+}
+
+.FifthSketch {
+grid-area:FifthSketch
+}
+
+.SixthSketch {
+grid-area:SixthSketch
+}
+
+.SketchGrid > div {
+overflow:hidden
+}
+
+
+
+/* Variation from default */
+.zoomItemSketch {
+width:100%;
+height:100%
+}
+
+.zoomItemSketch a img {
+height:100%;
+width:100%;
+object-fit:cover
+}
+
+.comicsPages img,.CartoonGrid div img {
+width:100%;
+height:auto;
+object-fit:cover
+}
+
+.zoomItemAnim{
+  width: 100%;
+  height: 100%;
+}
+
+.zoomItemAnim a img {
+  height:100%;
+  width:100%;
+  object-fit:cover
+  }
+
+  .AnimationGrid div img {
+    width:100%;
+    height:auto;
+    object-fit:cover
+    }
+/* ---------------------------------- Link ---------------------------------- */
+
+.OtherTextWrapper {
+  --text: #5887d8;
+  --line: #5887d8;
+  --font-size: 1.3vw;
+  --duration: 0.44s;
+  --duration-line: 0.84s;
+}
+
+.OtherTextWrapper {
+  font-size: var(--font-size);
+  margin: 0;
+  color: #20232c;
+  font-size: var(--font-size);
+  font-family:'DM Sans',sans-serif;
+  font-weight: 400;
+  line-height: var(--font-size);
+  zoom: 1.5;
+}
+
+.OtherTextWrapper .link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.OtherTextWrapper .link div {
+  overflow: hidden;
+}
+.OtherTextWrapper .link div:first-child {
+  display: flex;
+  overflow: hidden;
+  text-shadow: 0 var(--font-size) 0 var(--text);
+}
+.OtherTextWrapper .link div:last-child {
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  left: 0;
+  bottom: -3px;
+  height: 5px;
+}
+.OtherTextWrapper .link div:last-child svg {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300%;
+  height: 5px;
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 63.5px 128px;
+  stroke-dashoffset: var(--line-offset, 190.25px);
+  transform: translateX(var(--line-x)) translateZ(0);
+  transition: transform var(--line-d, 0s), stroke-dashoffset var(--line-d, 0s);
+}
+
+.OtherTextWrapper .link div span {
+  display: block;
+  backface-visibility: hidden;
+  font-style: normal;
+  transition: transform var(--duration) ease;
+  transform: translateY(var(--m, 0));
+}
+
+.OtherTextWrapper .link:hover {
+  --m: calc(var(--font-size) * -1);
+  --line-d: var(--duration-line);
+  --line-x: 65.66%;
+  --line-offset: 63.5px;
+}
+
+.Wraper{
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .OtherTextWrapper {
+    --font-size:16px;
+  }
+
+  .GridDescSpan{
+    font-size: 2vw;
+  }
+}
+
+
+
+
+
+
+/* --------------------------------- footer --------------------------------- */
+
+
+
+
+footer{
+  position: fixed;
+  bottom: 0px;
+  height: 70vh; 
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #20232c;
+  color: white;
+  padding: 1vh 10vw;
+  padding-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family:'DM Sans',sans-serif;
+  letter-spacing: -3%;
+  z-index: -1;
+
+}
+
+
+footer .SocialContact{
+  box-sizing: border-box;
+  padding: 0 20%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  
+}
+
+footer .SocialContact h1{
+  text-align: center;
+  font-size: 4vw;
+  box-sizing: border-box;
+  padding: 0 10%;
+}
+
+footer .SocialContact .divider{
+  background-color: #32394d;
+  width: 90%;
+  transform: translateX(5%);
+  height: 3px;
+  margin:1.5vw 0;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
+
+}
+
+footer .SocialButtons {
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  box-sizing: border-box;
+  padding: 0 7vw;
+}
+
+footer .SocialButtons .icon {
+  position: relative;
+  background: #463446;
+  border-radius: calc(min(max(5vw,70px), max(5vw,70px)) / 2);
+  width: max(5vw,60px);
+  height: max(5vw,60px);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow:rgba(0,0,0,0.16) 0 4px 32px;
+
+}
+
+
+
+@media (max-width: 768px) {
+  footer .SocialButtons .icon{
+    border-radius: 5vw;
+    width: 10vw;
+    height: 10vw;
+    margin-top: 2vw;
+  }
+}
+
+footer .SocialButtons .tooltip {
+  position: absolute;
+  bottom: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+footer .SocialButtons .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  top: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+footer .SocialButtons .icon:hover .tooltip {
+  bottom: -45px;
+  opacity: 1;
+  transition-delay: 0.3s;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+footer .SocialButtons .icon:hover i{
+transform: scale(1.5) rotate(360deg);
+}
+
+footer .SocialButtons .icon:hover span,
+footer .SocialButtons .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+footer .SocialButtons .Instagram  .tooltip{
+  background-image:linear-gradient(163deg, #4964da 0%, rgba(146, 73, 221, 0.8) 11.8%, rgba(176, 60, 196, 0.6) 23.6%, rgba(192, 55, 173, 0.4) 35.4%, rgba(217, 46, 116, 0) 59%), radial-gradient(100% 100% at 10% 100%, #fdd575 26%, #fcc06a 36.57%, #fbaa63 47.14%, #f99262 57.71%, #f77868 68.29%, #f55973 78.86%, #d22e8c 100%);
+}
+
+footer .SocialButtons .Instagram:hover,
+footer .SocialButtons .Instagram:hover .tooltip{
+  background-image:linear-gradient(163deg, #4964da 0%, rgba(146, 73, 221, 0.8) 11.8%, rgba(176, 60, 196, 0.6) 23.6%, rgba(192, 55, 173, 0.4) 35.4%, rgba(217, 46, 116, 0) 59%), radial-gradient(100% 100% at 10% 100%, #fdd575 26%, #fcc06a 36.57%, #fbaa63 47.14%, #f99262 57.71%, #f77868 68.29%, #f55973 78.86%, #d22e8c 100%);
+  color: #fff;
+}
+
+footer .SocialButtons .Instagram:hover .tooltip::before{
+  background-color: #a341c9;
+}
+
+footer .SocialButtons .Behance:hover,
+footer .SocialButtons .Behance:hover .tooltip,
+footer .SocialButtons .Behance:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+footer .SocialButtons .Pinterest:hover,
+footer .SocialButtons .Pinterest:hover .tooltip,
+footer .SocialButtons .Pinterest:hover .tooltip::before {
+  background: #e60023;
+  color: #fff;
+}
+
+footer .SocialButtons .YouTube:hover,
+footer .SocialButtons .YouTube:hover .tooltip,
+footer .SocialButtons .YouTube:hover .tooltip::before {
+  background: #43a858;
+  color: #fff;
+}
+
+footer .icon i {
+  color: white; /* Cambia il colore desiderato */
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.15); 
+  transform: scale(1.5);
+}
+
+/* Smarphone view */
+@media (max-width: 768px) {
+  footer{
+    height: 50vh; 
+  }
+  footer .SocialContact{
+    padding: 0;
+  }
+
+  footer .SocialContact h1{
+  font-size: 6vw;
+  }
+
+  footer .CircleContainer .SocialCircle{
+    height: 8vw;
+    width: 8vw;
+  }
+
+  footer .BottomBar{
+    height: auto;
+    font-size: 3vw;
+  }
+
+  #content-1.active{
+  margin-bottom: 300vh;
+  }
+
+  #content-2.active{
+    margin-bottom: 50vh;
+}
+  }
+
+
+  footer .BottomBar{
+    font-size: max(1.3vw,18px);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    footer .icon i {
+      transform: scale(1.2);
+    }
+
+    footer .SocialButtons .icon:hover i{
+      transform: scale(1.2) rotate(360deg);
+      }
+
+    footer .BottomBar{
+      font-size: 12px;
+    }
+  }
+
+  .newbuttonLink {
+    position: absolute;
+    background-color: transparent;
+    overflow: visible;
+    z-index: 0;
+  }
+
+  .newbuttonLink .MagneticChild {
+    width: 100%;
+  }
+
+  .OuterMagneticRangeLink {
+    width:12vw;
+    height: 6vw;
+    border-radius: 0px;
+  }
+
+  .newbuttonLink .MagneticChild:after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    z-index: 5;
+  }
+  
+  .OuterMagneticRangeLink:hover .MagneticChild:after {
+    width: 100%;
+    left: 0;
+  }
+  
+
+  footer > .OuterMagneticRange .newbutton {
+    width: max(6vw,60px);
+    height: max(6vw,60px);
+    background-color: #1877F2;
+    border-radius:calc(max(6vw,60px)/2);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    display: flex;
+    position: absolute;
+    box-shadow:rgba(0,0,0,0.16) 0 4px 32px;
+
+
+  }
+  
+
+  footer > .OuterMagneticRange .MagneticChild {
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    background-image: url("Resources/Firma-1.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 70%;
+    background-position: 50% center;
+  }
+  
+  footer > .OuterMagneticRange {
+    /* this is the range*/
+    width: 15vw;
+    min-height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7.5vw;
+    position: absolute;
+    left: 62vw;
+    top:calc(25% - 8vw)
+  }
+
+  .SocialContact .SocialButtons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+
+  @media (max-width: 768px) {
+    footer > .OuterMagneticRange {
+      left: 77vw;
+      top:calc(25% - 10vw)
+    }
+  }
+  
+
+  @media (max-width: 540px) {
+    footer .icon i {
+      transform: scale(1.2);
+    }
+
+    footer .SocialButtons .icon:hover i{
+      transform: scale(1.2) rotate(360deg);
+      }
+    footer > .OuterMagneticRange {
+      left: 79vw;
+      top:calc(25% - 2vw)
+    }
+  }
+
+  

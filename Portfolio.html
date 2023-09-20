@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Main.css" />  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.17/bundled/lenis.min.js"></script>
+
+    <!-- ---------------- da eliminare quando rifaccio la foto ----------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simple-lightbox.min.js"></script>
+
+    <!-- Includi il CSS di Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Includi il CSS di SimpleLightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css">
+
+
+</head>
+
+
+<body style="background-color: #20232c">
+
+
+
+    <!-- ------------------------------- Header -------------------------------- -->
+    <!-- ------------------------------- Header -------------------------------- -->
+    <!-- ------------------------------- Header -------------------------------- -->
+
+    <header class="header" id="Header">
+
+        <!-- ------------------------------- NavBar -------------------------------- -->
+        <nav class="NavbarHeader">
+            <div class="background-container">
+              <div class="background-image background1"></div>
+              <div class="background-image background2"></div>
+            </div>
+            <input type="radio" id="radio-1" name="tabsSelection" checked>
+            <label class="tab" for="radio-1">Me</label>
+            <input type="radio" id="radio-2" name="tabsSelection">
+            <label class="tab" for="radio-2">Work</label>
+            <span  class="glider"></span>
+        </nav>
+
+        <!-- ---------------------------- Social Button ---------------------------- -->     
+        <div class="OuterMagneticRange SocialBtn" style="position: absolute; left: 30px; top:10px">
+            <div data-strength="75" data-strength-text="50" style=" position:absolute; left:0px; top:0px;"  class="BtnHeader magnetic" id="SocialButton" style="display: block">
+
+                <svg class="MagneticChild" id="Social-icon" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero" class="instagram"><g fill-rule="nonzero" stroke="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+                
+                <p style=" position: absolute; white-space: nowrap; left: 60px; width:80px; top: 4px; bottom:20px; text-align: center;">Follow Me</p>
+                
+                <div class="Socialcard">
+                    <img  class="card-photo lazyload" id="card-photo" data-src="./Resources/Mati-min.webp"></img>
+                    <div class="card-title">Mati Ruffino <br>
+                        <span>Artist &amp; Piccione</span>
+                    </div>
+                    <div class="card-socials" id="card-socials">
+                        <button class="card-socials-btn facebook" onclick="window.open('https://www.instagram.com/peppertilli/', '_blank')">
+                          <svg viewBox="0 0 24 24" height="33" width="33">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+                            <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+                          </svg>
+                          
+                        </button>
+                        <button class="card-socials-btn github" onclick="window.open('https://www.pinterest.it/peppertilli/_created', '_blank')">
+                        <svg fill="#000000" height="33" width="32" version="1.1"  viewBox="-268 256 256 256" xml:space="preserve">
+                        <path d="M-143,273c-70.7,0-128,57.3-128,128c0,52.4,31.5,97.4,76.6,117.2c-0.4-8.9-0.1-19.7,2.2-29.4c2.5-10.4,16.5-69.7,16.5-69.7
+                          s-4.1-8.2-4.1-20.2c0-19,11-33.1,24.7-33.1c11.6,0,17.3,8.7,17.3,19.2c0,11.7-7.5,29.2-11.3,45.4c-3.2,13.6,6.8,24.6,20.2,24.6
+                          c24.3,0,40.6-31.1,40.6-68c0-28-18.9-49-53.3-49c-38.8,0-63,28.9-63,61.3c0,11.2,3.3,19,8.4,25.1c2.4,2.8,2.7,3.9,1.8,7.1
+                          c-0.6,2.3-2,8-2.6,10.3c-0.9,3.2-3.5,4.4-6.4,3.2c-17.9-7.3-26.2-26.9-26.2-48.9c0-36.4,30.7-80,91.5-80c48.9,0,81,35.4,81,73.3
+                          c0,50.2-27.9,87.7-69.1,87.7c-13.8,0-26.8-7.5-31.3-15.9c0,0-7.4,29.5-9,35.2c-2.7,9.9-8,19.7-12.9,27.4c11.5,3.4,23.7,5.3,36.3,5.3
+                          c70.7,0,128-57.3,128-128C-15,330.3-72.3,273-143,273z"/>
+                        </svg>
+                        </button>
+                        <button class="card-socials-btn linkedin" onclick="window.open('https://www.behance.net/peppertilli', '_blank')">
+                          <svg viewBox="0 0 24 24" height="33" width="33">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 19C1.67157 19 1 18.3284 1 17.5V6.5C1 5.67157 1.67157 5 2.5 5H8C13 5 13 11.5 10 11.5C13 11.5 14 19 8 19H2.5ZM4.5 11C4.22386 11 4 10.7761 4 10.5V7.5C4 7.22386 4.22386 7 4.5 7H7C7 7 9 7 9 9C9 11 7 11 7 11H4.5ZM4.5 13C4.22386 13 4 13.2239 4 13.5V16.5C4 16.7761 4.22386 17 4.5 17H8C8 17 9.5 17 9.5 15C9.5 13 8 13 8 13H4.5Z" fill="#0F0F0F"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.499 14.0034C22.3279 14.0034 23.0212 13.3199 22.8522 12.5085C21.6065 6.52886 12.9128 7.08088 13 14.0034C13.0665 19.2762 20.4344 20.9671 22.6038 16.1898C22.9485 15.4308 22.1747 14.9997 21.5372 14.9997C20.9706 14.9997 20.5313 15.5223 20.1693 15.9582C19.1272 17.2132 15.9628 17.1221 15.5449 14.5142C15.5005 14.2375 15.7304 14.0034 16.0106 14.0034H21.499ZM15.8184 11.9997C15.671 11.9997 15.5758 11.8453 15.6545 11.7207C16.7141 10.0424 19.2614 10.0605 20.3398 11.7189C20.4207 11.8434 20.3257 11.9997 20.1772 11.9997H15.8184Z" fill="#0F0F0F"/>
+                            <path d="M16 6C15.4477 6 15 6.44772 15 7C15 7.55228 15.4477 8 16 8H20C20.5523 8 21 7.55228 21 7C21 6.44772 20.5523 6 20 6H16Z" fill="#0F0F0F"/>
+                          </svg>
+                          
+                        </button>
+                        <button class="card-socials-btn github" onclick="window.open('mailto:mati.selvaggia@gmail.com')">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                        </button>
+                    
+                    </div>
+                </div>
+                
+            </div>
+        </div>  
+
+
+        <!-- ----------------------------- MenuButton ------------------------------ -->
+        <div class="OuterMagneticRange MenuBtn" style="position: absolute; right: 30px; top:10px">
+        <div data-strength="75" data-strength-text="50" style=" position:absolute; top:0px; right:0px; "  class="BtnHeader magnetic" id="MenuButton" >
+
+
+
+            <svg  class="MagneticChild" width="30" viewBox="0 0 20 20" height="30" fill="none" id="MenuButton-icon" >
+                <g  stroke-width="1.5" stroke-linecap="round" stroke="#000000">
+                    <circle r="2.5" cy="10" cx="10"></circle>
+                    <path fill-rule="evenodd" d="m8.39079 2.80235c.53842-1.51424 2.67991-1.51424 3.21831-.00001.3392.95358 1.4284 1.40477 2.3425.97027 1.4514-.68995 2.9657.82427 2.2758 2.27575-.4345.91407.0166 2.00334.9702 2.34248 1.5143.53842 1.5143 2.67996 0 3.21836-.9536.3391-1.4047 1.4284-.9702 2.3425.6899 1.4514-.8244 2.9656-2.2758 2.2757-.9141-.4345-2.0033.0167-2.3425.9703-.5384 1.5142-2.67989 1.5142-3.21831 0-.33914-.9536-1.4284-1.4048-2.34247-.9703-1.45148.6899-2.96571-.8243-2.27575-2.2757.43449-.9141-.01669-2.0034-.97028-2.3425-1.51422-.5384-1.51422-2.67994.00001-3.21836.95358-.33914 1.40476-1.42841.97027-2.34248-.68996-1.45148.82427-2.9657 2.27575-2.27575.91407.4345 2.00333-.01669 2.34247-.97026z" clip-rule="evenodd"></path>
+                </g>
+            </svg>  
+
+            <p style="white-space: nowrap; position:absolute; right: 60px; width:80px; margin-top: 20px; text-align: center;">Settings</p>
+            
+            <div class="cardMenu">
+                <div class="item" id="changeSectionManual1" >
+                  <lord-icon
+                  src="https://cdn.lordicon.com/adiugfir.json"
+                  trigger="hover"
+                  colors="primary:#fff,secondary:#ffffff "
+                  stroke=45"
+                  >
+                </lord-icon>
+                
+              <span class="text text--1"> About Me </span>
+              
+            </div>
+
+            <div class="item"  id="changeSectionManual2">
+
+                  <lord-icon
+                  src="https://cdn.lordicon.com/nsbufguq.json"
+                  trigger="hover"
+                  colors="primary:#FFF,secondary:#FFF"
+                  stroke="45"
+                  >
+                  </lord-icon>
+              <span class="text text--2"> My Works </span>
+                </div>
+
+                <a href="Gallery.html">
+
+                <div class="item">
+                  <lord-icon
+                  src="https://cdn.lordicon.com/jjjmlddk.json"
+                  trigger="hover"
+                  colors="primary:#FFF,secondary:#FFF"
+                  stroke="45"
+                  >
+              </lord-icon>                 
+              <span class="text text--3"> Gallery </span>
+                </div>
+              </a>
+                <div class="item" id="scroll-to-end">
+                  <lord-icon
+                  src="https://cdn.lordicon.com/rhvddzym.json"
+                  trigger="hover"
+                  colors="primary:#FFF,secondary:#FFF"
+                  stroke="45"
+                  >
+              </lord-icon>
+              <span class="text text--4" > Contacts </span>
+                </div>
+              </div>
+
+        </div> 
+        </div>
+    </header>
+
+
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+
+    <main class="sections" id="sections">
+        <section class="content active" id="content-1" >
+
+            <!-- ---------------------------- Welcome Page ----------------------------- -->
+            <div class="WelcomeSlider">
+              <div class="SliderContent">
+                <div class="scroll-indicator">
+    
+                  <svg  class="arrow-top" width="37" height="22" viewBox="0 0 37 22" fill="none">
+                  <path d="M3 3L18.5 19L34 3" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg class="arrow-bottom" width="37" height="22" viewBox="0 0 37 22" fill="none">
+                  <path d="M3 3L18.5 19L34 3" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+                </div>
+              </div>
+              <div class="OverlaySlider">
+                <h1 style="font-size: 6vw; text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff,
+                2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff; position: absolute; right: 4vw;">Welcome to my <br>Website</h1>
+              </div>
+
+            </div>
+            
+
+            <!-- ---------------------------- OtherContent ----------------------------- -->
+            <div id="OtherContent">
+                <p class="LabelDivisore">Welcome to my Portfolio</p>
+                <div class="divisore" style="margin-bottom: 0;"></div>
+
+                <div class="First">
+
+                    <div class="row">
+                      <div class="col-md-6 " id="colMD6-img">
+                        <span>
+                            <img class="lazyload" src="Resources/FirstIMG (2).webp" alt="Immagine">
+                        </span>
+                      </div>
+
+                      <div class="col-md-6">
+                        <h3 class="animateP">Hi I’m Matilde Ruffino,
+                            Artist & Pigeon
+                        </h3>
+                        <p class="animateP">Sono una giovane creativa appassionata di comunicazione e desiderosa di creare esperienze significative per le persone attraverso il mio lavoro. <br><br>
+
+                          La mia determinazione e la mia curiosità mi guidano costantemente alla scoperta di nuove opportunità e sfide.
+                        </p>
+
+                      </div>
+                    </div>
+                </div>
+
+                <p class="LabelDivisore" style="text-align:right; ">About Me</p>
+                <div class="divisore" style="position: relative; margin-left: auto;"></div>
+
+                <!-- ------------------------------ About Me ------------------------------- -->
+                <div class="AboutMe">
+                    <div class="FirstWrapper">
+                      <img src="Resources/PrimaTipaMobile.webp">
+                    <div class="text">
+                    <h1 class="animateP">Esperienze Creative</h1>
+                    <img src="Resources/Stelline.png" style="height: 6vw; width:auto;  position: absolute; left:33vw; margin-top:-8vw"  >
+
+                    <p class="animateP">
+                      Ho dimostrato la mia passione e abilità nella creatività e nella comunicazione attraverso una serie di progetti significativi: <br><br>
+
+                      •	Concorso "COVID con i Miei Occhi": Ho ottenuto il primo posto in questo concorso con l'animazione "Quarantin", che ha espresso in modo unico l'impatto della pandemia attraverso la lente della mia creatività.<br><br>
+                    
+                      •	Corso di Comunicazione Grafica: Ho partecipato con impegno a un corso focalizzato sulla creazione di loghi per diversi brand, organizzato dalla mia scuola. Questa esperienza mi ha permesso di affinare le mie capacità di design e di applicarle in contesti concreti.<br><br>
+                    
+                      •	Icona per Chatbot: Ho avuto l'opportunità di creare diversi personaggi creativi che fungono da icona per alcuni chatbot dedicati al risparmio intelligente e all'informazione ambientale. Questa sfida mi ha permesso di unire la mia creatività alla mia capacità di comunicare messaggi complessi in modo accessibile.<br><br>
+                    
+                      •	Progetti NFT: Ho partecipato attivamente a vari progetti di creazione di NFT, dimostrando la mia comprensione del mondo digitale e la mia capacità di tradurre concetti artistici in opere virtuali di valore.
+                    </p>
+                    </div>
+                    <img src="Resources/PrimaTipa.webp">  
+
+                  </div>
+                  <div class="StarWrapper">
+                    <img src="Resources/NewStarRating.webp" >
+                  </div>
+
+                  <div class="SecondWrapper">
+                    <img src="Resources/SecondaTipa.webp">
+                    <div class="text">
+                      <p class="animateP">Nonostante una formazione scolastica di tipo scientifico, ho coltivato le mie passioni e interessi in modo autodidatta. 
+                        Ho sempre visto ogni sfida come un'opportunità di apprendimento, e questa mentalità mi ha permesso di sviluppare una prospettiva unica e multidisciplinare.</p>
+                      <img src="Resources/SecondaTipaMobile.webp">
+
+                      <h1 class="animateP">Oltre la Creatività</h1>
+                      <p class="animateP">	•	Musica: Oltre alla creatività visiva, mi esprimo anche attraverso la musica. Ho iniziato a suonare il violino nel 2015 e l'ukulele nel 2020, dimostrando la mia dedizione nell'apprendere nuovi strumenti e sperimentare con diverse forme di espressione artistica. <br><br>
+
+                        •	Viaggi e Scoperte: Sono un'appassionata viaggiatrice e amante della scoperta. Ogni viaggio è un'opportunità per arricchire la mia prospettiva e raccogliere ispirazione da diverse culture e contesti.<br><br>
+                      
+                        •	Stile di Vita Attivo: Credo nell'importanza di un equilibrio tra il corpo e la mente. Amo praticare lo sport e mantenermi attiva, poiché credo che uno stile di vita sano contribuisca alla mia creatività e alla mia produttività.<br><br>
+                      </p>
+                      </div>
+                  </div>
+
+                  <div class="LastImgWrapper">
+                    <img src="Resources/5tipe.webp" >
+                    <div class="OuterMagneticRange">
+                     
+                      <div class="newbutton magnetic" data-strength="100" data-strength-text="50" >
+                      <div class="MagneticChild"></div>
+                      </div>
+                      <img src="Resources/Resto.webp">
+                    </div>
+                    <!-- -- <img src="Resources/FotoGiuP.webp"  style="margin-right: -8vw;"> --- -->
+                  </div>
+                </div>
+                
+                <p class="LabelDivisore" >My concept of Art</p>
+                <div class="divisore" style="margin-bottom: 0;"></div>
+
+                <!-- --------------------------- Frasea Celebre ---------------------------- -->
+                <div class="FraseCelebre">
+                  <div class="about_text_wrap">
+                    <div class="about_text">
+                      <div class="about_text_pWrap">
+                      <h1>“Per vedere dobbiamo dimenticare il
+                        nome delle cose che stiamo
+                        guardando”</h1>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Claude Monet</p>
+                </div>
+
+
+                <div class="GotoMyArtWrapper">
+                  <div class="parallax">
+                    <span>
+                        <img src="Resources/In_The_Middle_Of_The_City.webp" alt="Immagine">
+                    </span>
+                  </div>
+
+                  <div class="text">
+                    <h1>Immerse Yourself in the World of Art: <br>Check out my portfolio showcase </h1>
+                    <button id="section2Button changeSectionManual1" style="  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;" > <span class="GotoText">Portfolio</span>
+
+                      <div class="star-1">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-2">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-3">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-4">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-5">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-6">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                    </button>                  
+                  </div>
+                </div>
+          </div>
+
+        </section>
+                
+        <section class="content" id="content-2" style="display: none;">
+            <div class="IntroWorks">
+              <div class="parallax">
+                <span>
+                    <img src="Resources/BackgroundPalace-min.webp" alt="Immagine">
+                </span>
+              </div>
+
+
+              <div class="Text">
+                <p style="text-align: left;">Take a look to my works</p>
+                <h1>My Experiments & Personal Work</h1>
+                <p style="text-align:right;">2019-2023</p>
+              </div>
+              <img src="Resources/ViolinGirl.webp">
+            </div>
+            
+            <section class="OtherContentWork">
+
+              <p class="LabelDivisore">Animations</p>
+              <div class="divisore"></div>
+
+              <div class="AnimationGrid">
+                <div class="First-Frame">
+                  <div class="zoomItemAnim">
+                    <a href="Resources/IMG_2344.webp">                  
+                      <img class="lazyload"  data-src="Resources/IMG_2344.webp" >
+                    </a>
+                  </div>
+                </div>
+                <div class="Second-Frame">
+                  <div class="zoomItemAnim">
+                    <a href="Resources/IMG_2345.webp" >                  
+                      <img class="lazyload"  data-src="Resources/IMG_2345.webp"  >
+                    </a>
+                  </div>
+                </div>
+                <div class="Third-Frame">
+                  <div class="zoomItemAnim">
+                    <a href="Resources/IMG_2346.webp">                  
+                      <img class="lazyload"  data-src="Resources/IMG_2346.webp" >
+                    </a>
+                  </div>  
+                </div>
+                <div class="Video"><a style="border:none; width: 100%;height: 100%;" class="lightBoxVideoLink" href="https://www.youtube.com/embed/dY_FFvwZswQ?si=HVtZGlSyJ3ZXQcop"><iframe style="border:none; width: 100%;height: 100%;" src="https://www.youtube.com/embed/dY_FFvwZswQ?si=HVtZGlSyJ3ZXQcop" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a></div>
+                <div class="Text" style="font-size: 1.5vw; padding: 0 2.5vw; display: flex; align-items: center;">
+                  <span class="GridDescSpan">“QUARANTIN”
+                   è un progetto che ha partecipato al concorso Covid dai mie occhi, raggiungendo il primo posto. Si tratta di un’animazione che cerca di raccontare dagli occhi di uno studente la vita in dad
+                </span>
+                </div>
+              </div>
+  
+              
+              <p class="LabelDivisore" style="text-align:right; ">Comics</p>
+              <div class="divisore" style="position: relative; margin-left: auto;"></div>
+
+              <div class="ComicsGrid">
+                <div class="FirstPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.1-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.1-min.webp" >
+                    </a>
+                  </div>
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.2-min.webp">
+                    </a>
+                  </div>                
+                </div>
+                <div class="SecondPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.3-min.webp">
+                    </a>
+                  </div>                  
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.4-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.4-min.webp">
+                    </a>
+                  </div>
+                </div>
+                <div class="ThirdPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.5-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.5-min.webp">
+                    </a>
+                  </div>
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.6-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.6-min.webp">
+                    </a>
+                  </div>
+                </div>
+                <div class="ForthPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Pt.7-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Pt.7-min.webp">
+                    </a>
+                  </div>
+                </div>
+                <div class="ComicsText comicsPages" style="padding: 1vw; display: flex; align-items: center;">
+                  <span style="font-size: 1.2vw;">
+                    <span class="title" style="width:100%">Story</span> 
+                    <div class="divisor" style="width:100%; height: 2px; background-color: black; margin:10px 0"></div>
+                    <span>si tratta di un progetto scolastico nato dalla riflessione sul significato di libertà di espressione. Ho deciso di non dare direttamente la risposta, ma lasciarla raccontare in modo passivo ai personaggi della storia.Il fumetto parla di un artista tedesco nel periodo della seconda guerra mondiale, quando Hitler fece aprire la mostra dell'arte degenerata.</span  style="width:100%">
+                  </span>
+           
+              </div>
+              </div>
+  
+  
+              <p class="LabelDivisore">Illustrations</p>
+              <div class="divisore"></div>
+  
+              <div class="IllustrationGrid">
+                <div class="First-ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/Metamorfosi.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/Metamorfosi.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Second-Ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/Consumism.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/Consumism.webp">
+                    </a>
+                  </div>  
+                </div>
+                <div class="Third-Ill" >
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/candel_boy.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/candel_boy.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Forth-Ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/Calasar.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/Calasar.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Fifth-Ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/onda.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/onda.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Sisxth-Ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/soul.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/soul.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Seventh-Ill">
+                  <div class="zoomItemIll">
+                    <a href="Resources/Disegni/Illustrazioni/Copia di Cresci_In_Fretta.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/Copia di Cresci_In_Fretta.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="Eighth-ill">
+                  <div class="zoomItemIll">
+                      <a href="Resources/Disegni/Illustrazioni/Athena.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/Athena.webp">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+
+              <div class="Wraper">
+                <p class="OtherTextWrapper"><a class="link"  href="Gallery.html?source=Illustration">Check out more Illustrations</a></p>          
+              </div>
+
+
+              <p class="LabelDivisore" style="text-align:right; ">Cartoons</p>
+              <div class="divisore" style="position: relative; margin-left: auto;"></div>
+
+              <div class="CartoonGrid">
+                <div class="FirstCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/abbraccio_5.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/abbraccio_5.webp">
+                    </a>
+                  </div> 
+                </div>
+                <div class="SecondCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/yellow_5.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/yellow_5.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ThirdCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/Succo_Di_Culo.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/Succo_Di_Culo.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ForthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/consapevolezza_1.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/consapevolezza_1.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="FifthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/consapevolezza_2.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/consapevolezza_2.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SixthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Comics/consapevolezza_4.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Comics/consapevolezza_4.webp">
+                    </a>
+                  </div>                 
+                </div>
+              </div>
+
+              <div class="Wraper">
+                <p class="OtherTextWrapper"><a class="link" href="Gallery.html?source=Cartoon">Check out more Cartoons</a></p>          
+              </div>
+
+              <p class="LabelDivisore">Sketch</p>
+              <div class="divisore"></div>
+
+              <div class="SketchGrid">
+                <div class="FirstSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Quadri/Dipinto.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Quadri/Dipinto.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SecondSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Disegni Cartacei/2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Disegni Cartacei/2-min.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ThirdSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Disegni Cartacei/3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Disegni Cartacei/3-min.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ForthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Disegni Cartacei/4-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Disegni Cartacei/4-min.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="FifthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Disegni Cartacei/5-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Disegni Cartacei/5-min.webp">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SixthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Disegni Cartacei/6-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Disegni Cartacei/6-min.webp">
+                    </a>
+                  </div>                 
+                </div>
+              </div>
+
+              <div class="Wraper" style="margin-bottom:6vw;">
+                <p class="OtherTextWrapper"><a class="link" href="Gallery.html?source=Sketch">Check out more Sketch</a></p>          
+              </div>
+
+            </section>
+        </section>
+
+        <div class="transition-overlay" id="overlay" ></div>
+    </main>
+
+    <!-- ------------------------------- footer -------------------------------- -->
+    <!-- ------------------------------- footer -------------------------------- -->
+    <footer class="footer">
+
+      <div class="OuterMagneticRange">
+        <div class="newbutton magnetic" data-strength="50" data-strength-text="25">
+          <div class="MagneticChild"></div>
+        </div>
+      </div>
+
+      <div class="SocialContact" >
+
+        <div class="wrapper ">
+          <h1 class=>Reach Me on my Social Channels</h1>
+          <div class="divider"></div>
+            <ul class="SocialButtons">
+              <li class="icon Instagram">
+                  <span class="tooltip">Instagram</span>
+                    <a href="https://www.instagram.com/peppertilli/" target="_blank">
+                  <span><i class="fab fa-instagram"></i></span>
+                  </a>
+              </li>
+              <li class="icon Pinterest">
+                <span class="tooltip">Pinterest</span>
+                <a href="https://www.pinterest.it/peppertilli/_created" target="_blank">
+                  <span><i class="fab fa-pinterest"></i></span>
+                </a>
+              </li>
+              <li class="icon Behance">
+                <a href="https://www.behance.net/peppertilli" target="_blank">
+                  <span><i class="fab fa-behance"></i></span>
+                </a>
+                <span class="tooltip">Behance</span>
+
+              </li>
+                <li class="icon YouTube">
+                  <span class="tooltip">E-Mail</span>
+                  <a href="mailto:mati.selvaggia@gmail.com">
+                    <span>
+                      <i class="far fa-envelope"></i>
+                    </span>
+                  </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+
+      
+      <div class="BottomBar">
+
+        <div class="OuterMagneticRangeLink OuterMagneticRange" >
+          <div class="newbuttonLink magnetic" style="left:0;" data-strength="20" data-strength-text="40">
+            <div class="MagneticChild">Code by Mosca</div>
+          </div>
+        </div>
+        <div class="OuterMagneticRangeLink OuterMagneticRange">
+          <div class="newbuttonLink magnetic" data-strength="20" data-strength-text="40">
+            <div class="MagneticChild">©2023</div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+    <!-- ------------------------------- footer -------------------------------- -->
+    <script defer src="script.js"></script>
+
+    
+</body>
+
+</html>
