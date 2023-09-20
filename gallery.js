@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sections = document.querySelectorAll('.section');
 
-  fetch('imageData.json')
+  fetch('ImageData.json')
     .then(response => response.json())
     .then(data => {
       sections.forEach((section, index) => {
